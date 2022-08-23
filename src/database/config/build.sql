@@ -1,0 +1,5 @@
+BEGIN;
+
+DROP TABLE IF EXISTS table_name CASCADE;
+
+COMMIT;
