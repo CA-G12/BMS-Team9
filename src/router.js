@@ -11,4 +11,13 @@ const {
   notFound,
 } = require('./controllers/errorHandling/index');
 
-module.exports = { router };
+router.get('/insert', (req, res) => {
+  console.log(req.body);
+});
+router.get('/general', getGenerals);
+router.get('/search', databaseSearch);
+router.use(insertData);
+router.use(serverError);
+router.use(notFound);
+
+module.exports = router;
