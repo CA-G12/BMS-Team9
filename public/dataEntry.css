@@ -6,7 +6,6 @@
 }
 * {
   margin: 0;
-  font-family: "Imprima", sans-serif;
 }
 html,
 body {
@@ -45,3 +44,134 @@ h6 {
   isolation: isolate;
 }
 /* End preset */
+
+/* Root variables: */
+:root {
+  --main-color: #EFE5E8;
+  --secondary-color: #CDDFED;
+  --third-color: #1B1B1F;
+  --forth-color: #D9D9D9;
+}
+
+/* Starting the desktop design styles: */
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.container .header {
+  color: var(--third-color);
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radio-buttons {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 8rem;
+}
+
+.radio-buttons label {
+  color: var(--third-color);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.container .data-entry {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 35%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
+  background-color: var(--secondary-color);
+  border-radius: 2.2rem;
+  box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.4);
+}
+
+.form h3 {
+  color: var(--third-color);
+  font-family: 'Inter', sans-serif;
+  align-self: flex-start;
+}
+
+.form div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form div label {
+  color: var(--third-color);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.form input:not(.submit) {
+  width: 18rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  background-color: var(--forth-color);
+  border: none;
+  box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+}
+
+.submit {
+  width: 12rem;
+  height: 2.5rem;
+  background-color: var(--forth-color);
+  color: var(--third-color);
+  font-family: 'Inter', sans-serif;
+  border: none;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  padding: 0;
+}
+
+::placeholder { 
+  color: var(--third-color);
+  opacity: 1;
+}
+
+.books {
+  display: flex;
+}
+
+.authors {
+  display: none;
+}
+
+.publishers {
+  display: none;
+}
