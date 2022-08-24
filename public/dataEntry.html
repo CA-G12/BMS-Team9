@@ -11,11 +11,88 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <!-- Main style sheet. -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dataEntry.css">
   <title>BMS</title>
 </head>
 <body>
-  <h1 style="color: blue;">Data entry page!!!</h1>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Which table are you planning to append?</h1>
+      <section class="radio-buttons">
+        <label>
+          <input type="radio" name="books" id="books"> Books
+        </label>
+        <label>
+          <input type="radio" name="author" id="author"> Author
+        </label>
+        <label>
+          <input type="radio" name="publisher" id="publisher"> Publisher
+        </label>
+      </section>
+    </header>
+    <main class="data-entry">
+      <form class="form books" action="/insert" method="post" data-table="books">
+        <h3 class="form-heading">Books table data entry:</h3>
+        <div class="title-div">
+          <label for="title">Title: </label>
+          <input type="text" name="title" id="title" required>
+        </div>
+        <div class="category-div">
+          <label>Category: </label>
+          <input type="text" name="category" id="category" required>
+        </div>
+        <div class="price-div">
+          <label>Price: </label>
+          <input type="number" min="0.00" max="100.00" step="0.01" name="price" id="price" required>
+        </div>
+        <div class="auth-div">
+          <label>Author name: </label>
+          <input type="text" name="auth-name" id="auth-name" required>
+        </div>
+        <div class="pub-div">
+          <label>Publisher name: </label>
+          <input type="text" name="pub-name" id="pub-name" required>
+        </div>
+        <div class="year-div">
+          <label>Publishing Year: </label>
+          <input type="number" name="pub-year" minlength="4" maxlength="4" id="pub-year" required>
+        </div>
+        <input class="submit" id="submit" type="submit" value="submit">
+      </form>
+      <form class="form authors" action="/insert" method="post" data-table="books">
+        <h3 class="form-heading">Authors table data entry:</h3>
+        <div class="name-div">
+          <label>Name: </label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="field-div">
+          <label>Field: </label>
+          <input type="text" name="field" id="field" required>
+        </div>
+        <div class="country">
+          <label>Country: </label>
+          <input type="text" name="country" id="country" required>
+        </div>
+        <input class="submit" id="submit" type="submit" value="submit">
+      </form>
+      <form class="form publishers" action="/insert" method="post" data-table="books">
+        <h3 class="form-heading">Publishers table data entry:</h3>
+        <div class="name-div">
+          <label>Name: </label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="address-div">
+          <label>Address: </label>
+          <input type="text" name="address" id="address" required>
+        </div>
+        <div class="contact-div">
+          <label>Contact number: </label>
+          <input type="number" name="contact" id="contact" maxlength="8" required>
+        </div>
+        <input class="submit" id="submit" type="submit" value="submit">
+      </form>
+    </main>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
