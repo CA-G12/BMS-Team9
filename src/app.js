@@ -17,6 +17,5 @@ app.use(express.static(join(__dirname, '..', 'public')));
 app.use(router);
 
 app.use(compression);
-app.use(helmet.contentSecurityPolicy({ useDefaults: true, directives: { 'img-src': ["'self'", 'https: data:'] } }));
 
 module.exports = app;
