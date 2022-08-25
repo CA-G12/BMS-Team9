@@ -2,30 +2,31 @@ BEGIN;
 
 DROP TABLE IF EXISTS Books, Authors, Publishers CASCADE;
 
+
+CREATE TABLE Books (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(100) NOT NULL,
+  year INT NOT NULL,
+  category VARCHAR(100) NOT NULL,
+  price INT NOT NULL
+);
+
 CREATE TABLE Authors (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   field VARCHAR(100) NOT NULL,
-  coutry VARCHAR(100) NOT NULL
+  country VARCHAR(100) NOT NULL,
+  book_id INT NOT NULL,
+  FOREIGN KEY (book_id) REFERENCES Books(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Publishers (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   address VARCHAR(100) NOT NULL,
-  contact_num INT NOT NULL
-);
-
-CREATE TABLE Books (
-  id SERIAL PRIMARY KEY,
-  title VARCHAR(100) NOT NULL,
-  auth_id INT NOT NULL,
-  pub_id INT NOT NULL,
-  year DATE NOT NULL,
-  category VARCHAR(100) NOT NULL,
-  price INT NOT NULL,
-  FOREIGN KEY (auth_id) REFERENCES Authors(id),
-  FOREIGN KEY (pub_id) REFERENCES Publishers(id)
+  contact_num BIGINT NOT NULL,
+  book_id INT NOT NULL,
+  FOREIGN KEY (book_id) REFERENCES Books(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 COMMIT;
