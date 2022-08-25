@@ -1,4 +1,5 @@
 const radioButtons = document.querySelectorAll('.radio-buttons input');
+const submitInputs = document.querySelectorAll('input[type="submit"');
 
 radioButtons.forEach((input) => {
   input.addEventListener('click', (e) => {
@@ -41,5 +42,11 @@ radioButtons.forEach((input) => {
           publisherForm.style.display = 'none';
       }
     }
+  });
+});
+
+submitInputs.forEach((input) => {
+  input.addEventListener('click', () => {
+    window.location.href = '/public/dataEntry.html';
   });
 });
