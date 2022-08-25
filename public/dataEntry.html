@@ -31,7 +31,7 @@
       </section>
     </header>
     <main class="data-entry">
-      <form class="form books" action="/insert" method="post" data-table="books">
+      <form name="books" class="form books" action="/insert" method="post" data-table="books">
         <h3 class="form-heading">Books table data entry:</h3>
         <div class="title-div">
           <label for="title">Title: </label>
@@ -45,31 +45,13 @@
           <label>Price: </label>
           <input type="number" min="0.00" max="100.00" step="0.01" name="price" id="price" required>
         </div>
-        <div class="auth-div">
-          <label>Author name: </label>
-          <select name="auth-name" id="auth-name" required>
-            <option value="1">Python Made Easy</option>
-            <option value="2">The psychology of money</option>
-            <option value="3">Rich dad poor dad</option>
-            <option value="4">Hello from the other side</option>
-          </select>
-        </div>
-        <div class="pub-div">
-          <label>Publisher name: </label>
-          <select name="pub-name" id="pub-name" required>
-            <option value="1">Python Made Easy</option>
-            <option value="2">The psychology of money</option>
-            <option value="3">Rich dad poor dad</option>
-            <option value="4">Hello from the other side</option>
-          </select>
-        </div>
         <div class="year-div">
           <label>Publishing Year: </label>
-          <input type="number" name="pub-year" minlength="4" maxlength="4" id="pub-year" required>
+          <input type="text" name="pub_year" minlength="4" maxlength="4" id="pub-year" required>
         </div>
         <input class="submit" id="submit" type="submit" value="submit">
       </form>
-      <form class="form authors" action="/insert" method="post" data-table="books">
+      <form name="authors" class="form authors" action="/insert" method="post" data-table="books">
         <h3 class="form-heading">Authors table data entry:</h3>
         <div class="name-div">
           <label>Name: </label>
@@ -83,13 +65,22 @@
           <label>Country: </label>
           <input type="text" name="country" id="country" required>
         </div>
+        <div class="auth-div">
+          <label>Book title: </label>
+          <select name="book_name" id="book-name" required>
+            <option value="1">Python Made Easy</option>
+            <option value="2">The psychology of money</option>
+            <option value="3">Rich dad poor dad</option>
+            <option value="4">Hello from the other side</option>
+          </select>
+        </div>
         <input class="submit" id="submit" type="submit" value="submit">
       </form>
-      <form class="form publishers" action="/insert" method="post" data-table="books">
+      <form name="publishers" class="form publishers" action="/insert" method="post" data-table="books">
         <h3 class="form-heading">Publishers table data entry:</h3>
         <div class="name-div">
           <label>Name: </label>
-          <input type="text" name="name" id="name" required>
+          <input type="text" name="pub_name" id="name" required>
         </div>
         <div class="address-div">
           <label>Address: </label>
@@ -98,6 +89,15 @@
         <div class="contact-div">
           <label>Contact number: </label>
           <input type="number" name="contact" id="contact" maxlength="8" required>
+        </div>
+        <div class="pub-div">
+          <label>Book title: </label>
+          <select name="book_name" id="book-name" required>
+            <option value="1">Python Made Easy</option>
+            <option value="2">The psychology of money</option>
+            <option value="3">Rich dad poor dad</option>
+            <option value="4">Hello from the other side</option>
+          </select>
         </div>
         <input class="submit" id="submit" type="submit" value="submit">
       </form>
