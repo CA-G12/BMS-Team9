@@ -1,6 +1,6 @@
 const connection = require('../database/config/connection');
 
-const databaseSearch = (req, res) => {
+const databaseSearch = (req) => {
   const { topic, value } = req.body;
   switch (topic) {
     case 'book':
